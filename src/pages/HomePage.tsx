@@ -11,7 +11,7 @@ const projects = [
     id: "tms-interaction",
     title: "TMS : Interaction Opérateur-Machine",
     description: "Analyse ergonomique de mouvements opérateur à partir de vidéos, avec suivi des angles et export PDF des résultats",
-    image: " /TMSProjet.png",  
+    image: "/TMSProjet.png",  
     tags: ["TypeScript", "React", "Vite", "TailwindCSS", "Chart.js", "HTML5 Video", "React-PDF"],
     gradient: "from-yellow-400 to-orange-500",
   },
@@ -92,7 +92,7 @@ export default function HomePage() {
   {/* Photo */}
   <div className="absolute inset-12 rounded-full overflow-hidden border-2 border-white/20">
     <img
-      src="/chemin/vers/ta/photo.jpg"
+      src="/Lilian.png"
       alt="Profile"
       className="w-full h-full object-cover"
     />
