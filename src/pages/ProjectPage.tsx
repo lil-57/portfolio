@@ -39,7 +39,7 @@ const projectsData: Record<string, Project> = {
       "Analyse des mouvements opérateur-machine à partir de vidéos et extraction de données critiques.",
     longDescription:
       "Dans le cadre d'une analyse TMS (Troubles Musculo-Squelettiques), ce projet vise à fournir un outil interactif pour identifier les postures critiques d’un opérateur en action. Grâce à un traitement image par image, les angles de différentes articulations sont extraits automatiquement. Les données sont ensuite synchronisées avec la vidéo : l’utilisateur peut visualiser l’évolution des angles dans un graphique dynamique, consulter les valeurs maximales dans un tableau, et exporter ces informations pour analyse ou archivage. L’interface est ergonomique, responsive, et conçue pour une utilisation fluide dans un contexte industriel ou académique.",
-    image: "../../public/TMSProjet.png",
+    image: "/TMSProjet.png",
     tags: ["TypeScript", "React", "Vite", "TailwindCSS", "Chart.js", "HTML5 Video", "React-PDF"],
     gradient: "from-yellow-400 to-orange-500",
     githubUrl: "https://github.com/lil-57/tms-interaction",
@@ -63,7 +63,7 @@ const projectsData: Record<string, Project> = {
       "Système complet d’authentification avec JWT, cookies httpOnly, validation UX et espace utilisateur.",
     longDescription:
       "Ce projet propose un site web complet d’authentification, conçu pour garantir la sécurité des utilisateurs et offrir une expérience fluide. Il inclut une inscription et une connexion par mot de passe ou lien magique, un système de tokens JWT (access + refresh) stockés dans des cookies httpOnly, ainsi qu’un mécanisme de renouvellement automatique du token. Une interface utilisateur ergonomique permet également la modification du profil, la réinitialisation du mot de passe via un lien sécurisé, et un blocage temporaire après plusieurs tentatives échouées. L’ensemble a été développé avec une attention particulière à la sécurité, à la clarté du code, et à la réutilisabilité des composants.",
-    image: "../../public/AuthProjet.jpg",
+    image: "/AuthProjet.jpg",
     tags: ["React", "Vite", "TypeScript", "TailwindCSS", "NestJS", "PostgreSQL", "JWT", "EmailJS"],
     gradient: "from-blue-500 to-indigo-600",
     githubUrl: "https://github.com/lil-57/webAuth",

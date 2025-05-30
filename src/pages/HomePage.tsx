@@ -11,7 +11,7 @@ const projects = [
     id: "tms-interaction",
     title: "TMS : Interaction Opérateur-Machine",
     description: "Analyse ergonomique de mouvements opérateur à partir de vidéos, avec suivi des angles et export PDF des résultats",
-    image: "../../public/TMSProjet.png",  
+    image: " /TMSProjet.png",  
     tags: ["TypeScript", "React", "Vite", "TailwindCSS", "Chart.js", "HTML5 Video", "React-PDF"],
     gradient: "from-yellow-400 to-orange-500",
   },
@@ -20,7 +20,7 @@ const projects = [
     id: "site-authentification",
     title: "Site d’authentification sécurisé",
     description: "Inscription, connexion (mot de passe ou lien magique), gestion des tokens JWT, blocage temporaire, et espace utilisateur.",
-    image: "../../public/AuthProjet.jpg",
+    image: "/AuthProjet.jpg",
     tags: ["React", "Vite", "TypeScript", "TailwindCSS", "NestJS", "PostgreSQL", "JWT", "EmailJS"],
     gradient: "from-blue-500 to-indigo-600",
   }
