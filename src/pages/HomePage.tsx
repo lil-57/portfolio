@@ -41,12 +41,24 @@ export default function HomePage() {
             <GradientText>Portfolio</GradientText>
           </div>
           <div className="flex gap-4">
-            {[GithubIcon, LinkedinIcon, MailIcon].map((Icon, idx) => (
-              <Button key={idx} variant="ghost" size="icon" className="text-white hover:text-purple-400">
-                <Icon className="h-5 w-5" />
-              </Button>
-            ))}
-          </div>
+  {[
+    { Icon: GithubIcon, url: "https://github.com/lil-57" },
+    { Icon: LinkedinIcon, url: "https://www.linkedin.com/in/lilian-morinon-379600341/" },
+    { Icon: MailIcon, url: "mailto:lilianmorinon10@gmail.com" },
+  ].map(({ Icon, url }, idx) => (
+    <a
+      key={idx}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Button variant="ghost" size="icon" className="text-white hover:text-purple-400">
+        <Icon className="h-5 w-5" />
+      </Button>
+    </a>
+  ))}
+</div>
+
         </div>
       </nav>
 
@@ -73,12 +85,21 @@ export default function HomePage() {
             </div>
 
             <div className="flex gap-4">
-              <Button className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white border-0">
-                <CodeIcon className="h-4 w-4 mr-2" />
-                Voir mes projets
-              </Button>
+            <Button
+  className="bg-gradient-to-r from-purple-500 to-cyan-500 hover:from-purple-600 hover:to-cyan-600 text-white border-0"
+  onClick={() => {
+    const section = document.getElementById("projets");
+    section?.scrollIntoView({ behavior: "smooth" });
+  }}
+>
+  <CodeIcon className="h-4 w-4 mr-2" />
+  Voir mes projets
+</Button>
+
               <Button className="bg-white text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 border border-white hover:bg-white/10 hover:text-white transition">
-                Télécharger CV
+                <a href="/CVajour.pdf" download="CV_MORINON_LILIAN.pdf" >
+  Télécharger mon CV
+</a>
               </Button>
             </div>
           </div>
@@ -111,7 +132,7 @@ export default function HomePage() {
       </section>
 
       {/* Section projets */}
-      <section className="relative z-10 px-6 py-20">
+      <section id="projets" className="relative z-10 px-6 py-20">
         <div className="max-w-7xl mx-auto text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             <GradientText>Mes Projets</GradientText>
