@@ -4,6 +4,7 @@ import { GithubIcon, LinkedinIcon, MailIcon, CodeIcon, ZapIcon, CpuIcon } from "
 import GradientText from "@/components/GradientText"
 import ProjectCard from "@/components/ProjectCard"
 import { TechBadge } from "@/components/TechBadge"
+import { useState } from "react"
 
 const projects = [
 
@@ -14,6 +15,7 @@ const projects = [
     image: "/TMSProjet.png",  
     tags: ["TypeScript", "React", "Vite", "TailwindCSS", "Chart.js", "HTML5 Video", "React-PDF"],
     gradient: "from-yellow-400 to-orange-500",
+    year: "deuxiemeAnnee"
   },
 
   {
@@ -23,11 +25,19 @@ const projects = [
     image: "/AuthProjet.jpg",
     tags: ["React", "Vite", "TypeScript", "TailwindCSS", "NestJS", "PostgreSQL", "JWT", "EmailJS"],
     gradient: "from-blue-500 to-indigo-600",
+    year: "deuxiemeAnnee"
   }
-  
 ]
 
 export default function HomePage() {
+
+  const [filter, setFilter] = useState("all");
+
+  const filteredProjects = projects.filter((project) => {
+    if (filter === "all") return true;     // on affiche tout
+    return project.year === filter;        // on affiche que ceux qui matchent l'année choisie
+  });
+
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
       {/* Arrière-plan animé */}
@@ -131,22 +141,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section projets */}
-      <section id="projets" className="relative z-10 px-6 py-20">
-        <div className="max-w-7xl mx-auto text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-            <GradientText>Mes Projets</GradientText>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Découvrez mes dernières créations
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </section>
+{/* Section projets */}
+<section id="projets" className="relative z-10 px-6 py-20">
+  <div className="max-w-7xl mx-auto text-center mb-16">
+    <h2 className="text-4xl lg:text-5xl font-bold mb-4">
+      <GradientText>Mes Projets</GradientText>
+    </h2>
+    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+      Découvrez mes dernières créations
+    </p>
+  </div>
+
+  {/* 👉 Boutons de filtre */}
+  <div className="flex justify-end gap-4 mb-10">
+    <Button
+      onClick={() => setFilter("all")}
+      className={filter === "all" ? "bg-gray-700 text-white" : "bg-gray-300 text-black"}
+    >
+      Tous
+    </Button>
+    <Button
+      onClick={() => setFilter("premiereAnnee")}
+      className={filter === "premiereAnnee" ? "bg-blue-600 text-white" : "bg-gray-300 text-black"}
+    >
+      1ère année
+    </Button>
+    <Button
+      onClick={() => setFilter("deuxiemeAnnee")}
+      className={filter === "deuxiemeAnnee" ? "bg-blue-600 text-white" : "bg-gray-300 text-black"}
+    >
+      2ème année
+    </Button>
+  </div>
+
+  {/* 👉 Projets filtrés */}
+  <div className="grid md:grid-cols-2 gap-8">
+    {filteredProjects.map((project) => (
+      <ProjectCard key={project.id} project={project} />
+    ))}
+  </div>
+</section>
+
 
       <footer className="relative z-10 px-6 py-12 border-t border-white/10 text-center">
         <p className="text-gray-400">© 2024 Portfolio. Créé avec passion.</p>
