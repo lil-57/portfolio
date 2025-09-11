@@ -107,7 +107,7 @@ export default function HomePage() {
 </Button>
 
               <Button className="bg-white text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 border border-white hover:bg-white/10 hover:text-white transition">
-                <a href="/CVajour.pdf" download="CV_MORINON_LILIAN.pdf" >
+                <a href="/CV_Final.pdf" download="CV_MORINON_LILIAN.pdf" >
   Télécharger mon CV
 </a>
               </Button>
